@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-03-01T10:26:50 COT" name="Default Suite" finished-at="2022-03-01T10:26:58 COT" duration-ms="7998">
+    <groups>
+    </groups>
+    <test started-at="2022-03-01T10:26:50 COT" name="TMDB_Test1" finished-at="2022-03-01T10:26:58 COT" duration-ms="7998">
+      <class name="TestPlan">
+        <test-method signature="Login()[pri:1, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:50 COT" name="Login" finished-at="2022-03-01T10:26:53 COT" duration-ms="2521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="CreateList()[pri:2, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:53 COT" name="CreateList" finished-at="2022-03-01T10:26:54 COT" duration-ms="1222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateList -->
+        <test-method signature="AddToList()[pri:3, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:54 COT" name="AddToList" finished-at="2022-03-01T10:26:56 COT" duration-ms="1799" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToList -->
+        <test-method signature="AddToFavorites()[pri:4, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:56 COT" name="AddToFavorites" finished-at="2022-03-01T10:26:57 COT" duration-ms="1168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToFavorites -->
+        <test-method signature="AddToWatchList()[pri:5, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:57 COT" name="AddToWatchList" finished-at="2022-03-01T10:26:58 COT" duration-ms="1271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToWatchList -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:TestPlan@648c94da]" started-at="2022-03-01T10:26:58 COT" name="cleanUp" finished-at="2022-03-01T10:26:58 COT" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- TestPlan -->
+    </test> <!-- TMDB_Test1 -->
+  </suite> <!-- Default Suite -->
+</testng-results>
