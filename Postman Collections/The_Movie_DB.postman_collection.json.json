@@ -1,0 +1,529 @@
+{
+  "info": {
+    "_postman_id": "42a71ed4-0d82-4b8d-8cdd-9d2934daff6a",
+    "name": "The Movie DB",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Request Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2ad804c0-98ee-4311-8c67-b2d342d2932d",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "var request_token = pm.response.json().request_token;\r",
+              "pm.collectionVariables.set(\"request_token\",request_token );"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "00e240f5-b137-4c4b-83b1-816025a55cf4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/authentication/token/new?api_key={{apiKey}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "authentication",
+            "token",
+            "new"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Token",
+      "_postman_id": "3ae9ce71-99f4-408e-823d-d473920b88cf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"{{user_name}}\",\r\n  \"password\": \"{{password}}\",\r\n  \"request_token\": \"{{request_token}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{domain}}/authentication/token/validate_with_login?api_key={{apiKey}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "authentication",
+            "token",
+            "validate_with_login"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Session",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e05c328a-15fd-44dd-acc9-138baee8cbae",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "var session_id = pm.response.json().session_id;\r",
+              "pm.collectionVariables.set(\"session_id\",session_id );"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "09157f15-7c11-4f36-86e3-1765edc9c5b4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"request_token\": \"{{request_token}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{domain}}/authentication/session/new?api_key={{apiKey}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "authentication",
+            "session",
+            "new"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Details",
+      "_postman_id": "67147fe8-67cb-4b03-a2f2-b6c2b63eaeb1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/account?api_key={{apiKey}}&session_id={{session_id}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "account"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}",
+              "type": "text"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create List",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "0a0d22fb-5c65-4da3-b697-ee42a5c97527",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "var list_id = pm.response.json().list_id;\r",
+              "pm.collectionVariables.set(\"list_id\",list_id );"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "6929e320-398f-4803-b6d7-b9eaabf8c2bb",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{{name}}.\",\r\n  \"description\": \"{{description}}.\",\r\n  \"language\": \"{{languaje}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{domain}}/list?api_key={{apiKey}}&session_id={{session_id}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "list"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Movie",
+      "_postman_id": "d17a04a8-942f-4c32-b3c3-4ac6489e9e0e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"media_id\": {{movie_id}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{domain}}/list/{{list_id}}/add_item?api_key={{apiKey}}&session_id={{session_id}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "list",
+            "{{list_id}}",
+            "add_item"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Movie Details",
+      "_postman_id": "1906337d-7b10-4f97-b0e8-df5dcdb9cee7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/movie/{{movie_id}}?api_key={{apiKey}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "movie",
+            "{{movie_id}}"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rate Movie",
+      "_postman_id": "6f67a8e7-0a1a-4fc5-9600-09653c540572",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"value\": 9.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{domain}}/movie/{{movie_id}}/rating?api_key={{apiKey}}&session_id={{session_id}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "movie",
+            "{{movie_id}}",
+            "rating"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Clear List",
+      "_postman_id": "3ead33ef-952b-4ef6-bb1d-90953c4cf90c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/list/{{list_id}}/clear?api_key={{apiKey}}&session_id={{session_id}}&confirm=true",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "list",
+            "{{list_id}}",
+            "clear"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}"
+            },
+            {
+              "key": "confirm",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete List",
+      "_postman_id": "515e9552-d606-4fcb-97fe-d00f201e761d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/list/{{list_id}}?api_key={{apiKey}}&session_id={{session_id}}",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "list",
+            "{{list_id}}"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "session_id",
+              "value": "{{session_id}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movie Discover",
+      "_postman_id": "fca6640e-fb88-442c-90c5-d4a5e87cd0ec",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{domain}}/discover/movie?api_key={{apiKey}}&language=en-US&year=2022&original_title=Spider-Man: No Way Home",
+          "host": [
+            "{{domain}}"
+          ],
+          "path": [
+            "discover",
+            "movie"
+          ],
+          "query": [
+            {
+              "key": "api_key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "language",
+              "value": "en-US"
+            },
+            {
+              "key": "year",
+              "value": "2022"
+            },
+            {
+              "key": "original_title",
+              "value": "Spider-Man: No Way Home",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "62596d13-6b47-436a-bb49-d7369b8388f8",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "cf8ad3e8-8eb4-4fc9-84ae-91a396f3e15c",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "7a85daf4-cfe7-46c6-aa3b-caab4be8996a",
+      "key": "domain",
+      "value": "https://api.themoviedb.org/3",
+      "type": "string"
+    },
+    {
+      "id": "dfdd58d8-8654-478d-ba7c-c457e13dbe24",
+      "key": "request_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "5927ec84-7500-4855-aebf-8e5590a766c9",
+      "key": "session_id",
+      "value": "777dc85edc551d8b1a3a935179757ba46cba29b4",
+      "type": "string"
+    },
+    {
+      "id": "0b7899ad-1821-4b86-87d9-6f6f3d89f6cc",
+      "key": "name",
+      "value": "ListName",
+      "type": "string"
+    },
+    {
+      "id": "a5ec5779-bd9c-4280-9553-1b28589915ef",
+      "key": "descriprion",
+      "value": "ListDescription",
+      "type": "string"
+    },
+    {
+      "id": "ae773813-ba0b-473f-a48b-1c9986c23448",
+      "key": "languaje",
+      "value": "en",
+      "type": "string"
+    },
+    {
+      "id": "dcc980b9-2b69-4526-8540-26a0978f8c76",
+      "key": "list_id",
+      "value": "list_id",
+      "type": "string"
+    },
+    {
+      "id": "a7748527-011f-4853-ad57-a092220f1062",
+      "key": "movie_id",
+      "value": "634649",
+      "type": "string"
+    }
+  ]
+}
