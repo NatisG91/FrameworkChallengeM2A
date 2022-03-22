@@ -23,7 +23,7 @@
           }
         }
       ],
-      "_postman_id": "00e240f5-b137-4c4b-83b1-816025a55cf4",
+      "id": "00e240f5-b137-4c4b-83b1-816025a55cf4",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -52,7 +52,7 @@
     },
     {
       "name": "Validate Token",
-      "_postman_id": "3ae9ce71-99f4-408e-823d-d473920b88cf",
+      "id": "3ae9ce71-99f4-408e-823d-d473920b88cf",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -106,7 +106,7 @@
           }
         }
       ],
-      "_postman_id": "09157f15-7c11-4f36-86e3-1765edc9c5b4",
+      "id": "09157f15-7c11-4f36-86e3-1765edc9c5b4",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -144,7 +144,7 @@
     },
     {
       "name": "Get Details",
-      "_postman_id": "67147fe8-67cb-4b03-a2f2-b6c2b63eaeb1",
+      "id": "67147fe8-67cb-4b03-a2f2-b6c2b63eaeb1",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -193,7 +193,7 @@
           }
         }
       ],
-      "_postman_id": "6929e320-398f-4803-b6d7-b9eaabf8c2bb",
+      "id": "6929e320-398f-4803-b6d7-b9eaabf8c2bb",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -233,7 +233,7 @@
     },
     {
       "name": "Add Movie",
-      "_postman_id": "d17a04a8-942f-4c32-b3c3-4ac6489e9e0e",
+      "id": "d17a04a8-942f-4c32-b3c3-4ac6489e9e0e",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -275,7 +275,7 @@
     },
     {
       "name": "Get Movie Details",
-      "_postman_id": "1906337d-7b10-4f97-b0e8-df5dcdb9cee7",
+      "id": "1906337d-7b10-4f97-b0e8-df5dcdb9cee7",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -303,7 +303,7 @@
     },
     {
       "name": "Rate Movie",
-      "_postman_id": "6f67a8e7-0a1a-4fc5-9600-09653c540572",
+      "id": "6f67a8e7-0a1a-4fc5-9600-09653c540572",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -345,7 +345,7 @@
     },
     {
       "name": "Clear List",
-      "_postman_id": "3ead33ef-952b-4ef6-bb1d-90953c4cf90c",
+      "id": "3ead33ef-952b-4ef6-bb1d-90953c4cf90c",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -382,7 +382,7 @@
     },
     {
       "name": "Delete List",
-      "_postman_id": "515e9552-d606-4fcb-97fe-d00f201e761d",
+      "id": "515e9552-d606-4fcb-97fe-d00f201e761d",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -414,7 +414,7 @@
     },
     {
       "name": "Movie Discover",
-      "_postman_id": "fca6640e-fb88-442c-90c5-d4a5e87cd0ec",
+      "id": "fca6640e-fb88-442c-90c5-d4a5e87cd0ec",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -478,49 +478,43 @@
   ],
   "variable": [
     {
-      "id": "7a85daf4-cfe7-46c6-aa3b-caab4be8996a",
+      "id": "581b4c6c-483f-4232-98f9-a8cfa814225a",
       "key": "domain",
-      "value": "https://api.themoviedb.org/3",
-      "type": "string"
+      "value": "https://api.themoviedb.org/3"
     },
     {
-      "id": "dfdd58d8-8654-478d-ba7c-c457e13dbe24",
+      "id": "093f8b9c-2658-48d1-b647-a09034b93803",
       "key": "request_token",
-      "value": "",
-      "type": "string"
+      "value": ""
     },
     {
-      "id": "5927ec84-7500-4855-aebf-8e5590a766c9",
+      "id": "421454e5-3ee9-4360-9ed8-9bc2fd7f03dc",
       "key": "session_id",
-      "value": "777dc85edc551d8b1a3a935179757ba46cba29b4",
-      "type": "string"
+      "value": "777dc85edc551d8b1a3a935179757ba46cba29b4"
     },
     {
-      "id": "0b7899ad-1821-4b86-87d9-6f6f3d89f6cc",
+      "id": "b0f2da6b-1b23-4f80-a6c9-047c1eeb163c",
       "key": "name",
-      "value": "ListName",
-      "type": "string"
+      "value": "ListName"
     },
     {
-      "id": "a5ec5779-bd9c-4280-9553-1b28589915ef",
+      "id": "372df063-70b9-4a78-a60b-1d276127d940",
       "key": "descriprion",
-      "value": "ListDescription",
-      "type": "string"
+      "value": "ListDescription"
     },
     {
-      "id": "ae773813-ba0b-473f-a48b-1c9986c23448",
+      "id": "8361fc84-fc63-4a75-8326-df0a8298cfda",
       "key": "languaje",
-      "value": "en",
-      "type": "string"
+      "value": "en"
     },
     {
-      "id": "dcc980b9-2b69-4526-8540-26a0978f8c76",
+      "id": "b39507bb-c982-4717-9c72-18a3809166e2",
       "key": "list_id",
       "value": "list_id",
       "type": "string"
     },
     {
-      "id": "a7748527-011f-4853-ad57-a092220f1062",
+      "id": "583223d2-5629-4cab-bdb5-c29c325a59e4",
       "key": "movie_id",
       "value": "634649",
       "type": "string"
